@@ -1,0 +1,1 @@
+python3 TheHackAssembler.py inputs/Pong.asm Pong.hack
