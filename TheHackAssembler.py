@@ -1,6 +1,6 @@
 from Parser import Parser
 from TheCodeModule import TheCodeModule
-from instruction_tables import symbol_dict
+from InstructionTable import symbol_dict
 import sys
 
 

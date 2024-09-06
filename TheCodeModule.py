@@ -1,5 +1,5 @@
-from instruction_tables import comp_dict_a0, comp_dict_a1, dest_dict, jump_dict, symbol_dict
-import re
+from InstructionTable import comp_dict_a0, comp_dict_a1, dest_dict, jump_dict, symbol_dict
+
 
 class TheCodeModule:
     '''input: dest field from Parser, returns bin vlaue of dest field'''
