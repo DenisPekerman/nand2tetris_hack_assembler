@@ -2,3 +2,4 @@
 *.hack
 .vscode
 .DS_Store
+assembler_main.py
