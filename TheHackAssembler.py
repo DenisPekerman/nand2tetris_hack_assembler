@@ -11,7 +11,7 @@ class TheHackAssembler:
         self.output_file = output_file
         self.binary_output = []
  
-        
+    """findes all labels and adds it to symbol_dict with the next line number"""
     def first_pass(self):
         line_counter = 0
         parser = Parser(self.input_file)
@@ -25,7 +25,7 @@ class TheHackAssembler:
             else:
                 line_counter += 1
           
-
+    """findes all symbols with '@' and adds them to symbol dict"""
     def second_pass(self):
         register_counter = 16
         parser = Parser(self.input_file)
@@ -38,7 +38,7 @@ class TheHackAssembler:
                     register_counter += 1
                 
         
-
+    """translates A and C instructions to binary"""
     def translation(self):
         parser = Parser(self.input_file)
         code = TheCodeModule()
@@ -48,11 +48,7 @@ class TheHackAssembler:
                 symbol_txt  = parser.symbol()
                 bin_line = code.code_a_instruction(symbol_txt)
                 self.binary_output.append(bin_line)
-            # elif line == 'L_INSTRUCTION':
-            #     symbol_txt = parser.symbol()
-            #     bin_line = code.label(symbol_txt)
-            #     self.binary_output.append(bin_line)
-            elif line == 'C_INSTRUCTION':
+                elif line == 'C_INSTRUCTION':
                 
                 comp_txt = parser.comp()
                 comp = code.comp(comp_txt)
