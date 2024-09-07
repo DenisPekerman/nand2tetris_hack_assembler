@@ -18,14 +18,13 @@ class TheHackAssembler:
         while parser.advance():
             instruction_type = parser.instructionType()
             if instruction_type == 'L_INSTRUCTION':
-                # line_counter -= 1
                 symbol = parser.symbol()
                 if symbol not in symbol_dict:
                     symbol_dict[symbol] = line_counter
             else:
                 line_counter += 1
           
-    """findes all symbols with '@' and adds them to symbol dict"""
+    """findes all symbols with '@' and adds it to symbol dict"""
     def second_pass(self):
         register_counter = 16
         parser = Parser(self.input_file)
@@ -48,8 +47,7 @@ class TheHackAssembler:
                 symbol_txt  = parser.symbol()
                 bin_line = code.code_a_instruction(symbol_txt)
                 self.binary_output.append(bin_line)
-                elif line == 'C_INSTRUCTION':
-                
+            elif line == 'C_INSTRUCTION':
                 comp_txt = parser.comp()
                 comp = code.comp(comp_txt)
                 
